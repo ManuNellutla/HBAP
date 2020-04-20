@@ -1,8 +1,8 @@
-##
+"""
 #  Read Employee CSV file
 #  Get Frist Name, Last Name and Birthdate
 #  Print as table format
-##
+"""
 
 import csv
 from prettytable import PrettyTable
@@ -15,6 +15,6 @@ with open(filename, "r") as file:
     reader = csv.reader(file)
     next(reader)
     for col in reader:
-        t.add_row([col[2] , col[1], col[4]])
+        t.add_row([col[2], col[1], col[4]])
 
 print(t)

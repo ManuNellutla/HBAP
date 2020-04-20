@@ -9,4 +9,3 @@ elif x == y:
     print(f"We broke even")
 else :
     print(f"We have a loss : {x-y}")
-
