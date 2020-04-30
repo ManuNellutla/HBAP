@@ -6,7 +6,9 @@ if len(sys.argv) != 2:
 
 file = sys.argv[1]
 
+""" using csv reader """
 with open(file, "r") as ifile:
-    reader = csv.DictReader(ifile)
+    reader = csv.reader(ifile)
     for row in reader:
-        print(row["FirstName"],":", row["BirthDate"])
+        print(row[0],",", row[1], ",", row[2])
+

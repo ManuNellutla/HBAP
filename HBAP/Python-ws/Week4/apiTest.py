@@ -1,7 +1,6 @@
 import requests
 import csv
 from prettytable import PrettyTable
-import numpy as np
 
 url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=5min&apikey=demo&datatype=csv"
 
@@ -17,5 +16,5 @@ for row in reader:
 
 
 print(t)
-#avgVol = (np.mean(list(row['volume'])))
+avgVol = (np.mean(list(row['volume'])))
 print(f"average volume : {avgVol}")
