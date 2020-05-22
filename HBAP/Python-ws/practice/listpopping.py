@@ -11,8 +11,8 @@ for c in range(len(pyramid)):
     print(pyramid)
     pyramid.pop()
 
-pyramid = list("whatascrewup")
-for c in range(len(pyramid)):
+pyramid = "whatascrewup"
+for char in pyramid:
     s = ""
     print(s.join(pyramid))
     pyramid[c] = " "
