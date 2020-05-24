@@ -20,7 +20,8 @@ gameDisplay = pygame.display.set_mode((display_width, display_height))
 pygame.display.set_caption('A bit Racey')
 clock = pygame.time.Clock()
 
-carImg = pygame.image.load('./images/ship.png')
+carImg = pygame.image.load('car.png')
+carImg = pygame.transform.scale(carImg, (128, 75))
 
 
 def things_dodged(count):
