@@ -1,6 +1,6 @@
 import pandas  as pd
 
-mafs = pd.read_csv("mafs.csv")
+mafs = pd.read_csv("../datasets/mafs.csv")
 
 print(f" \nColumn names of the Data set \n {mafs.columns}")
 

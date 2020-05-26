@@ -26,7 +26,7 @@ def get_mae(max_leaf_nodes, train_X, val_X, train_y, val_y):
 
 def main():
     # file name / path"
-    filename = "melb_data.csv"
+    filename = "../datasets/melb_data.csv"
 
     """  read data into  data frame """
     home_data = pd.read_csv(filename)

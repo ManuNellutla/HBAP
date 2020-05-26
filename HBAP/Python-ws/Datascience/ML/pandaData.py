@@ -1,7 +1,7 @@
 import pandas as pd
 from datetime import datetime
 
-filename = "melb_data.csv"
+filename = "../datasets/melb_data.csv"
 
 home_data = pd.read_csv(filename)
 print(home_data.columns)

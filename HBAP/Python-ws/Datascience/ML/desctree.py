@@ -3,7 +3,7 @@ from sklearn.metrics import mean_absolute_error
 import pandas as pd
 
 
-filename = "melb_data.csv"
+filename = "../datasets/melb_data.csv"
 
 home_data = pd.read_csv(filename)
 
