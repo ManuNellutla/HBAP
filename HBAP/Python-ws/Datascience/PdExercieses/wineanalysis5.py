@@ -13,3 +13,6 @@ country_reviews = country_reviews.reset_index()
 
 print(f" \nafter reset: \nshape of country reviews is {country_reviews.shape} and index type is {type(country_reviews.index)}")
 
+print(f"\n Sorted by length \n {country_reviews.sort_values('len')}")
+
+print(f"\n Sorted by countries and length \n {country_reviews.sort_values(by=['country','len'])}")
