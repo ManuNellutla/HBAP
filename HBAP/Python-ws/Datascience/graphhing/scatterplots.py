@@ -24,6 +24,3 @@ ax2.set_xlim(0, 1.8)
 
 
 plt.show()
-
-
-plt.show()
