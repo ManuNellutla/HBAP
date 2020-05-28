@@ -9,3 +9,7 @@ print(f"new data has nulls \n{new_data.isnull().sum()}")
 
 new_data['yes'] = new_data.Yes.replace(np.nan, 'yes')
 print(new_data)
+
+yes_string = str(new_data.yes)
+
+print(yes_string.dtype)
