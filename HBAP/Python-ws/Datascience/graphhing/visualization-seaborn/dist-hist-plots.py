@@ -14,6 +14,10 @@ plt.figure(figsize=(16, 6))
 # print(f"  \n after getnumeric\n {numeric_data.info()}")
 #
 plotdata = mafs[['PassengerId', 'Pclass', 'Fare']]
-sns.lineplot(data=plotdata)
+sns.distplot(mafs.Age.dropna(), label='Age')
+plotdata
+sns.distplot(mafs.Fare.dropna(), label='Fare')
+
+sns.catplot(y='Fare', x='Pclass', data=mafs, legend_out=True, )
 
 plt.show()
