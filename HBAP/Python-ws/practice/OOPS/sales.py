@@ -1,5 +1,6 @@
 from Shirts import Pant
 
+
 class SalesPerson:
 
     def __init__(self, first_name: str, last_name: str, employee_id: int, salary: float):
@@ -40,7 +41,7 @@ class SalesPerson:
 
         :return:
         """
-        self.total_sales = sum(p.price for  p in self.pants_sold)
+        self.total_sales = sum(p.price for p in self.pants_sold)
         return self.total_sales
 
     def calculate_commission(self, comm: float) -> float:
