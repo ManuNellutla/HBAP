@@ -6,7 +6,7 @@
 from unittest import TestCase
 from gaussiance import Gaussiance
 import random
-import types as ty
+import matplotlib.pyplot as plt
 
 class TestGaussiance(TestCase):
     g = Gaussiance(0, 1)
@@ -21,6 +21,7 @@ class TestGaussiance(TestCase):
         mean = self.g.calculate_mean()
         print(f"Mean  {mean}")
         assert isinstance(mean, (int,float)), "mean is not a float %r" % mean
+        print(self.g)
 
     def test_calculate_stddev(self):
         self.setUp()
@@ -35,4 +36,23 @@ class TestGaussiance(TestCase):
     def test_plot_hist(self):
         self.setUp()
         self.g.plot_hist()
+        assert True
+
+    def test_add(self):
+        self.setUp()
+        self.g.calculate_mean()
+        self.g.calculate_stddev(True)
+        data2 = random.sample(range(50, 100),30) * random.randint(1,5)
+        g2 = Gaussiance(3,2)
+        g2.set_data(data2)
+        g2.calculate_mean()
+        g2.calculate_stddev(False)
+        print(self.g)
+        print(g2)
+        gsum = self.g + g2
+        print(gsum)
+        self.g.plot_hist()
+        g2.plot_hist()
+        gsum.plot_hist()
+        plt.show()
         assert True

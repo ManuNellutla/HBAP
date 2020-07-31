@@ -6,7 +6,7 @@
 import math
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+import ppretty
 
 class Gaussiance():
     """
@@ -27,7 +27,7 @@ class Gaussiance():
         :param sigma:
         """
         self.stddev = sigma
-        self.mu = mu
+        self.mean = mu
         self.data = []
 
     def calculate_mean(self) -> float:
@@ -72,6 +72,7 @@ class Gaussiance():
         :param data: sending  data as a list.
         :return:
         """
+        data
         self.data = data
 
     def plot_hist(self) -> None:
@@ -83,9 +84,22 @@ class Gaussiance():
         Returns:
 
         """
-        sns.distplot(self.data, bins=30, hist=True, color='green', norm_hist=True)
+        sns.distplot(self.data, bins=30, hist=True, norm_hist=True)
         #plt.hist(self.data, histtype=u'step')
         plt.xlabel('count')
         plt.ylabel('data')
         plt.title('Histogram  of data')
-        plt.show()
+
+
+    def __repr__(self):
+        return ppretty.ppretty(self)
+
+    def __add__(self, other):
+        result = Gaussiance()
+        data = self.data + other.data
+        result.set_data(data)
+        result.calculate_mean()
+        result.calculate_stddev(False)
+        # result.mean = self.mean + other.mean
+        # result.stddev  = math.sqrt(self.stddev **2  + other.stddev **2)
+        return result
